@@ -128,7 +128,11 @@ function loadEarthEngineImage(type) {
         'yield': 'https://earthengine.google.com/static/images/crop-yield.jpg',
         'soil': 'https://earthengine.google.com/static/images/soil-health.jpg',
         'pest': 'https://earthengine.google.com/static/images/pest-detection.jpg',
-        'water': 'https://earthengine.google.com/static/images/water-stress.jpg'
+        'water': 'https://earthengine.google.com/static/images/water-stress.jpg',
+        'thermal': 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
+        'overview': 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop',
+        'density': 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop',
+        'spectral': 'https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&h=400&fit=crop'
     };
     
     showNotification(`Loading ${type} satellite data from Google Earth Engine...`, 'info');
@@ -150,26 +154,26 @@ function initializeDataChart() {
     const data = {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
-            label: 'NDVI Health Score',
-            data: [0.65, 0.72, 0.78, 0.85, 0.88, 0.92, 0.89, 0.87, 0.84, 0.79, 0.75, 0.70],
-            borderColor: '#00d4ff',
-            backgroundColor: 'rgba(0, 212, 255, 0.1)',
+            label: 'Crop Health Index',
+            data: [65, 72, 78, 85, 88, 92, 89, 87, 84, 79, 75, 70],
+            borderColor: '#4ade80',
+            backgroundColor: 'rgba(74, 222, 128, 0.1)',
             borderWidth: 3,
             fill: true,
             tension: 0.4
         }, {
-            label: 'Soil Moisture %',
+            label: 'Soil Moisture Level',
             data: [60, 65, 70, 75, 80, 85, 82, 78, 75, 70, 65, 62],
-            borderColor: '#7c3aed',
-            backgroundColor: 'rgba(124, 58, 237, 0.1)',
+            borderColor: '#22c55e',
+            backgroundColor: 'rgba(34, 197, 94, 0.1)',
             borderWidth: 3,
             fill: true,
             tension: 0.4
         }, {
-            label: 'Yield Prediction',
-            data: [85, 88, 92, 95, 98, 100, 97, 94, 90, 87, 83, 80],
-            borderColor: '#ff6b35',
-            backgroundColor: 'rgba(255, 107, 53, 0.1)',
+            label: 'Yield Potential',
+            data: [75, 78, 82, 85, 88, 90, 87, 84, 80, 77, 73, 70],
+            borderColor: '#16a34a',
+            backgroundColor: 'rgba(22, 163, 74, 0.1)',
             borderWidth: 3,
             fill: true,
             tension: 0.4

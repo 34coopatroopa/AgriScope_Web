@@ -450,6 +450,120 @@ body {
     transition: transform 0.3s ease;
 }
 
+.placeholder-image {
+    width: 100%;
+    height: 250px;
+    background: var(--dark-card);
+    border: 2px dashed rgba(74, 222, 128, 0.3);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.placeholder-image:hover {
+    border-color: var(--primary-color);
+    background: rgba(74, 222, 128, 0.05);
+}
+
+.placeholder-image i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+}
+
+.placeholder-image p {
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+}
+
+.data-info-card {
+    width: 100%;
+    height: 250px;
+    background: var(--dark-card);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    border-radius: 15px;
+    padding: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.data-info-card:hover {
+    border-color: var(--primary-color);
+    background: rgba(74, 222, 128, 0.05);
+    transform: translateY(-2px);
+}
+
+.data-info-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.data-info-card h4 i {
+    font-size: 1.1rem;
+}
+
+.data-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+    overflow: hidden;
+}
+
+.data-type,
+.data-shows,
+.satellite-sources {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    flex-shrink: 0;
+}
+
+.data-type strong,
+.data-shows strong,
+.satellite-sources strong {
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.75rem;
+}
+
+.satellite-sources ul {
+    margin: 0.2rem 0 0 0.8rem;
+    padding: 0;
+    list-style: none;
+}
+
+.satellite-sources li {
+    position: relative;
+    margin-bottom: 0.15rem;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+.satellite-sources li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: -0.8rem;
+}
+
 .gallery-item:hover .gallery-image img {
     transform: scale(1.1);
 }
@@ -460,7 +574,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(74, 222, 128, 0.9), rgba(34, 197, 94, 0.9), rgba(22, 163, 74, 0.9));
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.7), rgba(34, 197, 94, 0.7), rgba(22, 163, 74, 0.7));
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -468,7 +582,7 @@ body {
     text-align: center;
     opacity: 0;
     transition: opacity 0.3s ease;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -585,14 +699,14 @@ body {
     letter-spacing: 1px;
 }
 
-.impact-timeline {
+.mission-statement {
     margin-top: 4rem;
+    text-align: center;
 }
 
-.impact-timeline h3 {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: 600;
+.mission-statement h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 3rem;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -600,77 +714,44 @@ body {
     background-clip: text;
 }
 
-.timeline {
-    position: relative;
-    max-width: 800px;
+.mission-content {
+    max-width: 900px;
     margin: 0 auto;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--gradient-earth);
-    transform: translateX(-50%);
-}
-
-.timeline-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 3rem;
-    position: relative;
-}
-
-.timeline-item:nth-child(odd) {
-    flex-direction: row;
-}
-
-.timeline-item:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.timeline-year {
-    background: var(--gradient-earth);
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 50px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    position: relative;
-    z-index: 2;
-    min-width: 100px;
-    text-align: center;
-    box-shadow: var(--shadow-primary);
-}
-
-.timeline-content {
     background: var(--dark-card);
-    padding: 2rem;
-    border-radius: 15px;
-    border: 1px solid rgba(0, 212, 255, 0.1);
-    margin: 0 2rem;
-    flex: 1;
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    box-shadow: var(--shadow-primary);
     transition: all 0.3s ease;
 }
 
-.timeline-content:hover {
+.mission-content:hover {
     border-color: var(--primary-color);
-    box-shadow: var(--shadow-primary);
+    box-shadow: 0 20px 50px rgba(74, 222, 128, 0.3);
+    transform: translateY(-5px);
 }
 
-.timeline-content h4 {
-    font-size: 1.3rem;
+.mission-text {
+    font-size: 1.4rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
+    line-height: 1.8;
     color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
-.timeline-content p {
-    color: var(--text-secondary);
-    line-height: 1.6;
+.mission-signature {
+    border-top: 2px solid rgba(74, 222, 128, 0.3);
+    padding-top: 2rem;
+    margin-top: 2rem;
+}
+
+.signature {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-style: italic;
+    margin: 0;
 }
 
 /* Data Insights Section */
@@ -1046,25 +1127,22 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .timeline::before {
-        left: 20px;
+    .mission-statement h3 {
+        font-size: 2rem;
     }
     
-    .timeline-item {
-        flex-direction: row !important;
-        padding-left: 3rem;
+    .mission-content {
+        padding: 2rem;
+        margin: 0 1rem;
     }
     
-    .timeline-year {
-        position: absolute;
-        left: -50px;
-        min-width: 80px;
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
+    .mission-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
     }
     
-    .timeline-content {
-        margin: 0;
+    .signature {
+        font-size: 1rem;
     }
     
     .farm-metrics {
@@ -1108,11 +1186,22 @@ body {
         grid-template-columns: 1fr;
     }
     
-    .timeline-year {
-        left: -40px;
-        min-width: 70px;
-        font-size: 0.8rem;
-        padding: 0.4rem 0.8rem;
+    .mission-statement h3 {
+        font-size: 1.8rem;
+    }
+    
+    .mission-content {
+        padding: 1.5rem;
+        margin: 0 0.5rem;
+    }
+    
+    .mission-text {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .signature {
+        font-size: 0.9rem;
     }
     
     .chart-container {
