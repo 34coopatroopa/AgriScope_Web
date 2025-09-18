@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://agriscope-website.vercel.app/sitemap.xml
+Sitemap: https://agriscope-website.pages.dev/sitemap.xml
