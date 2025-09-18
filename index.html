@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriScope - Satellite Intelligence for Sustainable Agriculture</title>
+    <meta name="description" content="Transform agriculture with real-time satellite data, precision farming insights, and AI-powered analytics to feed the world sustainably.">
+    <meta name="keywords" content="agriculture, satellite, farming, sustainability, precision agriculture, NDVI, crop monitoring">
+    <meta name="author" content="AgriScope">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://agriscope-website.vercel.app/">
+    <meta property="og:title" content="AgriScope - Satellite Intelligence for Sustainable Agriculture">
+    <meta property="og:description" content="Transform agriculture with real-time satellite data, precision farming insights, and AI-powered analytics.">
+    <meta property="og:image" content="https://agriscope-website.vercel.app/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://agriscope-website.vercel.app/">
+    <meta property="twitter:title" content="AgriScope - Satellite Intelligence for Sustainable Agriculture">
+    <meta property="twitter:description" content="Transform agriculture with real-time satellite data, precision farming insights, and AI-powered analytics.">
+    <meta property="twitter:image" content="https://agriscope-website.vercel.app/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.earthengine.google.com/client-api?"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-satellite"></i>
+                <span>AgriScope</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Farm Solutions</a></li>
+                <li><a href="#gallery">Satellite Views</a></li>
+                <li><a href="#impact">Future Impact</a></li>
+                <li><a href="#data">Farm Analytics</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="stars"></div>
+            <div class="earth"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="highlight">Satellite Intelligence</span>
+                <br>for Sustainable Farming
+            </h1>
+            <p class="hero-subtitle">
+                Transform agriculture with real-time satellite data, precision farming insights, and AI-powered analytics to feed the world sustainably and protect our planet's future.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('features')">
+                    <i class="fas fa-seedling"></i>
+                    Farm Solutions
+                </button>
+                <button class="btn btn-secondary" onclick="scrollToSection('impact')">
+                    <i class="fas fa-globe-americas"></i>
+                    Future Impact
+                </button>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Smart Farm Solutions</h2>
+                <p>Revolutionary satellite technology transforming agriculture for a sustainable future</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crop Health Monitoring</h3>
+                    <p>Real-time NDVI analysis detects crop stress, disease, and nutrient deficiencies before visible symptoms appear, enabling early intervention.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Precision Irrigation</h3>
+                    <p>Satellite-based soil moisture mapping optimizes water usage, reducing consumption by up to 30% while improving crop yields.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Pest & Disease Detection</h3>
+                    <p>Advanced spectral analysis identifies pest infestations and disease outbreaks early, enabling targeted treatment and reducing pesticide use.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Yield Prediction</h3>
+                    <p>AI-powered algorithms analyze satellite data to predict crop yields with 95% accuracy, helping farmers plan harvests and optimize resources.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainable Practices</h3>
+                    <p>Monitor carbon sequestration, soil health, and biodiversity to support regenerative agriculture and climate-smart farming.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Farm Management</h3>
+                    <p>Access satellite insights on your smartphone with real-time alerts, field recommendations, and automated farm management tools.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>Live Satellite Views</h2>
+                <p>Real-time agricultural monitoring from space</p>
+            </div>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Fields</button>
+                <button class="filter-btn" data-filter="crops">Crop Health</button>
+                <button class="filter-btn" data-filter="irrigation">Water Management</button>
+                <button class="filter-btn" data-filter="soil">Soil Analysis</button>
+            </div>
+            <div class="gallery-grid" id="satelliteGallery">
+                <!-- Images will be loaded dynamically from Google Earth Engine -->
+                <div class="gallery-item" data-category="crops">
+                    <div class="gallery-image">
+                        <img src="https://earthengine.google.com/static/images/agriculture-ndvi.jpg" alt="NDVI Crop Health Analysis" onerror="this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&h=400&fit=crop'">
+                        <div class="gallery-overlay">
+                            <h4>NDVI Crop Health</h4>
+                            <p>Vegetation health index showing crop stress areas</p>
+                            <button class="btn btn-small" onclick="loadEarthEngineImage('ndvi')">View Live Data</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="irrigation">
+                    <div class="gallery-image">
+                        <img src="https://earthengine.google.com/static/images/soil-moisture.jpg" alt="Soil Moisture Mapping" onerror="this.src='https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=400&fit=crop'">
+                        <div class="gallery-overlay">
+                            <h4>Soil Moisture</h4>
+                            <p>Precision irrigation optimization</p>
+                            <button class="btn btn-small" onclick="loadEarthEngineImage('moisture')">View Live Data</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="crops">
+                    <div class="gallery-image">
+                        <img src="https://earthengine.google.com/static/images/crop-yield.jpg" alt="Crop Yield Prediction" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop'">
+                        <div class="gallery-overlay">
+                            <h4>Yield Prediction</h4>
+                            <p>AI-powered harvest forecasting</p>
+                            <button class="btn btn-small" onclick="loadEarthEngineImage('yield')">View Live Data</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="soil">
+                    <div class="gallery-image">
+                        <img src="https://earthengine.google.com/static/images/soil-health.jpg" alt="Soil Health Analysis" onerror="this.src='https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop'">
+                        <div class="gallery-overlay">
+                            <h4>Soil Health</h4>
+                            <p>Nutrient mapping and soil composition</p>
+                            <button class="btn btn-small" onclick="loadEarthEngineImage('soil')">View Live Data</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="crops">
+                    <div class="gallery-image">
+                        <img src="https://earthengine.google.com/static/images/pest-detection.jpg" alt="Pest Detection" onerror="this.src='https://images.unsplash.com/photo-1519501025264-65ba15a82390?w=600&h=400&fit=crop'">
+                        <div class="gallery-overlay">
+                            <h4>Pest Detection</h4>
+                            <p>Early warning system for crop threats</p>
+                            <button class="btn btn-small" onclick="loadEarthEngineImage('pest')">View Live Data</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="irrigation">
+                    <div class="gallery-image">
+                        <img src="https://earthengine.google.com/static/images/water-stress.jpg" alt="Water Stress Analysis" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop'">
+                        <div class="gallery-overlay">
+                            <h4>Water Stress</h4>
+                            <p>Drought monitoring and water management</p>
+                            <button class="btn btn-small" onclick="loadEarthEngineImage('water')">View Live Data</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Future Impact Section -->
+    <section id="impact" class="impact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Shaping Agriculture's Future</h2>
+                <p>How satellite intelligence is revolutionizing farming for global sustainability</p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Feeding 10 Billion People</h3>
+                    <p>By 2050, we need to produce 70% more food. Satellite technology enables precision agriculture to maximize yields while minimizing environmental impact.</p>
+                    <div class="impact-stat">
+                        <span class="stat-number">70%</span>
+                        <span class="stat-label">More Food Needed</span>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Climate-Smart Agriculture</h3>
+                    <p>Reduce greenhouse gas emissions by 30% through optimized fertilizer use, precision irrigation, and sustainable farming practices monitored from space.</p>
+                    <div class="impact-stat">
+                        <span class="stat-number">30%</span>
+                        <span class="stat-label">Emission Reduction</span>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Water Conservation</h3>
+                    <p>Agriculture uses 70% of global freshwater. Satellite monitoring optimizes irrigation, reducing water waste and protecting this precious resource.</p>
+                    <div class="impact-stat">
+                        <span class="stat-number">40%</span>
+                        <span class="stat-label">Water Savings</span>
+                    </div>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Regenerative Agriculture</h3>
+                    <p>Monitor soil health, carbon sequestration, and biodiversity to support regenerative practices that restore ecosystems while producing food.</p>
+                    <div class="impact-stat">
+                        <span class="stat-number">25%</span>
+                        <span class="stat-label">Soil Improvement</span>
+                    </div>
+                </div>
+            </div>
+            <div class="impact-timeline">
+                <h3>Our Vision Timeline</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-content">
+                            <h4>Smart Farm Adoption</h4>
+                            <p>50,000 farms worldwide using satellite intelligence for precision agriculture</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2027</div>
+                        <div class="timeline-content">
+                            <h4>Global Coverage</h4>
+                            <p>Real-time monitoring of 1 billion acres of farmland across all continents</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2030</div>
+                        <div class="timeline-content">
+                            <h4>Carbon Neutral Farming</h4>
+                            <p>Net-zero agriculture achieved through satellite-guided sustainable practices</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2035</div>
+                        <div class="timeline-content">
+                            <h4>Food Security</h4>
+                            <p>Eliminating global hunger through optimized, sustainable food production</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Insights Section -->
+    <section id="data" class="data-insights">
+        <div class="container">
+            <div class="section-header">
+                <h2>Farm Analytics Dashboard</h2>
+                <p>Real-time agricultural intelligence from satellite data</p>
+            </div>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <h3>NDVI Health Score</h3>
+                        <div class="insight-value">0.87</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 87%"></div>
+                    </div>
+                    <p>Vegetation health index (0-1 scale)</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <h3>Soil Moisture</h3>
+                        <div class="insight-value">72%</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 72%"></div>
+                    </div>
+                    <p>Optimal irrigation timing</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <h3>Crop Stress Alert</h3>
+                        <div class="insight-value">Low</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 25%"></div>
+                    </div>
+                    <p>Early warning system active</p>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-header">
+                        <h3>Yield Forecast</h3>
+                        <div class="insight-value">+18%</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                    <p>Expected increase vs. baseline</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <h3>Seasonal Crop Performance</h3>
+                <canvas id="dataChart"></canvas>
+            </div>
+            <div class="farm-metrics">
+                <div class="metric-card">
+                    <i class="fas fa-water"></i>
+                    <h4>Water Efficiency</h4>
+                    <span class="metric-value">35%</span>
+                    <span class="metric-label">Water Saved</span>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Carbon Footprint</h4>
+                    <span class="metric-value">-28%</span>
+                    <span class="metric-label">Emissions Reduced</span>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Soil Health</h4>
+                    <span class="metric-value">+22%</span>
+                    <span class="metric-label">Organic Matter</span>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Profit Margin</h4>
+                    <span class="metric-value">+31%</span>
+                    <span class="metric-label">Revenue Increase</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Started Today</h2>
+                <p>Ready to harness the power of satellite intelligence?</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contact@agriscope.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-satellite"></i>
+                    <span>AgriScope</span>
+                </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#features">Farm Solutions</a>
+                <a href="#gallery">Satellite Views</a>
+                <a href="#impact">Future Impact</a>
+                <a href="#data">Farm Analytics</a>
+                <a href="#contact">Contact</a>
+            </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AgriScope. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

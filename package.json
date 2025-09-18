@@ -1,0 +1,33 @@
+{
+  "name": "agriscope-website",
+  "version": "1.0.0",
+  "description": "AgriScope - Satellite Intelligence for Sustainable Agriculture",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build step required'",
+    "start": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "agriculture",
+    "satellite",
+    "farming",
+    "sustainability",
+    "earth-observation",
+    "precision-agriculture"
+  ],
+  "author": "AgriScope Team",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^32.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/agriscope-website.git"
+  },
+  "homepage": "https://agriscope-website.vercel.app"
+}
